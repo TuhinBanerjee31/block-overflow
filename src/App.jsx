@@ -22,7 +22,7 @@ function App() {
   return (
     <WalletProvider>
       <BrowserRouter>
-        <div className="min-h-screen bg-gray-100">
+        <div className="flex flex-col min-h-screen bg-gray-100">
           <ToastContainer {...toastOptions} />
           <Header />
           <Routes>
@@ -35,6 +35,8 @@ function App() {
       </BrowserRouter>
     </WalletProvider>
   );
+
+  
 }
 
 export default App;
