@@ -17,11 +17,11 @@ export function AnswerCard({ answer, index }) {
     >
       <Card
         className={`overflow-hidden border-border/60 ${
-          answer.isBest ? "border-2 border-green-400" : ""
+          answer.isBest ? "border-2 border-green-400 bg-green-200/10" : ""
         }`}
       >
         {answer.isBest && (
-          <div className="bg-green-400/10 border-b border-green-400 px-4 py-2 flex items-center gap-2">
+          <div className="bg-green-400/10 border-b border-green-400 px-4 py-2  flex items-center gap-2">
             <Award className="size-4 text-green-500" />
             <span className="text-sm font-medium text-green-700">
               Best Answer

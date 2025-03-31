@@ -21,6 +21,7 @@ import {
   Search,
   CheckCircle2,
   Loader2,
+  Bookmark,
   ThumbsUp,
   ChevronRight,
 } from "lucide-react";
@@ -283,12 +284,19 @@ function QuestionsPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.1 * index }}
                   >
-                    <Card className="overflow-hidden gap-5 bg-white border-border/60">
+                    <Card className="overflow-hidden gap-5 bg-white border-border/60 card-hover">
                       <CardHeader className="pb-0">
                         <div className="flex justify-between items-start">
                           <CardTitle className="text-xl font-medium">
                             Q#{q.id}: {q.content}
                           </CardTitle>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="rounded-full"
+                          >
+                            <Bookmark className="size-4" />
+                          </Button>
                         </div>
                       </CardHeader>
 
@@ -323,7 +331,7 @@ function QuestionsPage() {
 
                       {/* Answer Section */}
                       {answers[q.id] ? (
-                        <div className="px-6 py-4 bg-green-50 border-t border-b border-green-100">
+                        <div className="px-6 py-4 bg-gray-50 border-t border-b border-green-100">
                           <div className="flex justify-between mb-3">
                             <span className="text-green-700 font-medium">
                               Answer:
@@ -343,7 +351,7 @@ function QuestionsPage() {
                           </div>
 
                           {loadingState.answers[q.id] ? (
-                            <div className="mt- 4 flex justify-center">
+                            <div className="mt-4 flex justify-center">
                               <Loader2 className="animate-spin h-5 w-5 text-indigo-600" />
                             </div>
                           ) : (
